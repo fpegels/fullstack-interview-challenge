@@ -16,13 +16,13 @@ router.route("/").get(cors.corsWithOptions, function (req, res, next) {
   const flights = flightsDataSet
     .filter(
       (flight) =>
-        flight.data > date &&
+        flight.data >= date &&
         flight.origin === origin &&
         flight.destination === destination &&
         flight.availability > 0
     )
     .sort((a, b) => a.price - b.price)
-    .slice(0, 5);
+    .slice(0, 3);
 
   res.send(flights);
 });
