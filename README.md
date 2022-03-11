@@ -3,7 +3,7 @@ It consists of a backend built using ExpressJs and a frontend built using React.
 
 # How to run it
 
-- First use `npm start` or `npm run start-dev` inside the `planets_express` folder.
+- First use `npm start` or `npm run start-dev` inside the `planets_express` folder. Make sure its running on port 3000 (set by default).
 - Use `npm start` inside the `planets-react` folder.
 - Enjoy!
 

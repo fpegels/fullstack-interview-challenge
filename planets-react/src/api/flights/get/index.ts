@@ -7,14 +7,6 @@ interface getProps {
   destination: string;
 }
 
-interface Flight {
-  origin: String;
-  destination: String;
-  price: Number;
-  availability: Number;
-  date: String;
-}
-
 export async function get({ date, origin, destination }: getProps) {
   const query = queryString.stringify({
     date,
@@ -23,7 +15,7 @@ export async function get({ date, origin, destination }: getProps) {
   });
 
   try {
-    const response = await fetch("http://localhost:3000/flights" + `?${query}`);
+    const response = await fetch(`http://localhost:3000/flights?${query}`);
     const data = await response.json();
     return transformResponse(data);
   } catch (error) {
